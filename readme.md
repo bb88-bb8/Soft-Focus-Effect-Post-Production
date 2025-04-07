@@ -56,3 +56,6 @@ volume={Early Access}
 }
 ```
 Moreover, if you have any questions about this project, please email to `s106021226@m106.nthu.edu.tw`.
+
+## License
+This code is released under the MIT License. 
