@@ -134,14 +134,14 @@ def preprocess(I_file):
         amp_origin[amp_origin < 1] = 0
 
         def process_channel(i):
-            amp_origin[:, :, i] = fft_convolution(amp_origin[:, :, i], gaus_kernel)
+            amp_origin[:, :, i] = fft_convolution(
+                amp_origin[:, :, i], gaus_kernel)
 
         with ThreadPoolExecutor() as executor:
             executor.map(process_channel, range(amp_origin.shape[2]))
         # for i in range(amp_origin.shape[2]):
         #     amp_origin[:, :, i] = fft_convolution(
         #         amp_origin[:, :, i], gaus_kernel)
-            
 
         mask_origin = I.copy()
         mask_origin[mask_origin < 1] = 0
@@ -308,7 +308,8 @@ def select_I_file():
 
 if __name__ == '__main__':
     root = tk.Tk()
-    root.title("Post Function GUI")
+    root.title(
+        "Novel Computational Photography for Soft-Focus Effect in Automatic Post Production")
 
     I_button = tk.Button(root, text="Select I File", command=select_I_file)
     I_button.pack()
