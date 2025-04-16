@@ -258,18 +258,23 @@ def _save_result_thread():
         tg_value = tg_scale.get()
         kb_value = kb_scale.get()
         tb_value = tb_scale.get()
-        # \chi parameter in paper, we pre-quantified it here.
-        M_value = np.power(M_scale.get()*10000,0.9)
-        fig = post_out(kr_value, tr_value, kg_value,
-                       tg_value, kb_value, tb_value, M_value)
+        M_value = np.power(M_scale.get()*10000, 0.9)
+        fig = post_out(kr_value, tr_value, kg_value, tg_value, kb_value, tb_value, M_value)
 
         file_path = filedialog.asksaveasfilename(defaultextension=".png",
                                                  filetypes=[("PNG files", "*.png"),
+                                                            ("JPG files", "*.jpg"),
                                                             ("All files", "*.*")])
         if file_path:
-            if file_path:
-                imageio.imsave(file_path, to_non_linear(fig), compress_level=2)
-                result_label.config(text=f"Result saved to {file_path}")
+            output_img = to_non_linear(fig)
+            if file_path.lower().endswith(".jpg") or file_path.lower().endswith(".jpeg"):
+                # save as jpg
+                im = Image.fromarray(output_img).convert("RGB")
+                im.save(file_path, quality=95, optimize=True)
+            else:
+                # save as png
+                imageio.imsave(file_path, output_img, compress_level=2)
+            result_label.config(text=f"Result saved to {file_path}")
         else:
             result_label.config(text="Save operation cancelled.")
     except Exception as e:
@@ -297,7 +302,7 @@ def update_result(*args):
             result_label.config(
                 text="Please select and preprocess an I file first.")
     except Exception as e:
-        result_label.config(text=f"Error: {e}")
+        result_label.config(text="Please select and preprocess an I file first.")
 
 
 def select_I_file():
@@ -369,8 +374,6 @@ if __name__ == '__main__':
     tb_scale = tk.Scale(frame, from_=0, to=15, orient="horizontal",
                         resolution=slider_resolution, command=update_result, length=slider_length)
     tb_scale.pack()
-
-
     kr_scale.set(1)
     tr_scale.set(1)
     kg_scale.set(1)
