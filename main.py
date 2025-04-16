@@ -302,7 +302,7 @@ def update_result(*args):
             result_label.config(
                 text="Please select and preprocess an I file first.")
     except Exception as e:
-        result_label.config(text="Please select and preprocess an I file first.")
+        result_label.config(text=f"Error: {e}")
 
 
 def select_I_file():
@@ -374,12 +374,6 @@ if __name__ == '__main__':
     tb_scale = tk.Scale(frame, from_=0, to=15, orient="horizontal",
                         resolution=slider_resolution, command=update_result, length=slider_length)
     tb_scale.pack()
-    kr_scale.set(1)
-    tr_scale.set(1)
-    kg_scale.set(1)
-    tg_scale.set(1)
-    kb_scale.set(1)
-    tb_scale.set(1)
 
     result_label = tk.Label(frame, text="Result: ")
     result_label.pack()
