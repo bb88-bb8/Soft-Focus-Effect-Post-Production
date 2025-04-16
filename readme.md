@@ -25,7 +25,7 @@ To run the program, run ``python3 main.py``, then you will see the GUI, and you 
 ## Demo
 Click Select File to choose the desired image to generate a soft-focus effect.
 
-Change the value of `M` to tune the major strength of the effect by dragging the bar. The `M` equals $\chi \times 10000$, where $\chi$ is defined in Eq. (32) in the paper.
+Change the value of `M` to tune the major strength of the effect by dragging the bar. $(M \times 10000)^{0.9}=\chi$, where $\chi$ is defined in Eq. (32) in the paper.
 
 Then, dragging the bar, choose the desired $(k,t)$ value in each channel. The higher $t$ can get a smoother effect. The higher $k$ can have a more substantial impact.
 

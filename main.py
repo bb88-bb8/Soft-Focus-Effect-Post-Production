@@ -37,10 +37,12 @@ def to_linear(img):  # for linear workflow
 
 
 def to_non_linear(img):  # for display
-    if img.dtype == 'uint8':
-        return np.uint8(np.round(np.power(np.clip(img, 0, 1), 1/gamma)*255))
-    else:
-        return np.uint8(np.round(np.power(np.clip(img, 0, 1), 1/gamma)*255))
+    """ to_linear
+            Args:
+                img (float ndarray, shape(height, width, ch)): image with gamma profile
+            return: return a image to nonlinear domain (uint8 image)
+    """
+    return np.uint8(np.round(np.power(np.clip(img, 0, 1), 1/gamma)*255))
 
 
 def generate_gaussian_kernel(height, width, sigma=1.0):
@@ -257,7 +259,7 @@ def _save_result_thread():
         kb_value = kb_scale.get()
         tb_value = tb_scale.get()
         # \chi parameter in paper, we pre-quantified it here.
-        M_value = M_scale.get()*10000
+        M_value = np.power(M_scale.get()*10000,0.9)
         fig = post_out(kr_value, tr_value, kg_value,
                        tg_value, kb_value, tb_value, M_value)
 
@@ -284,7 +286,7 @@ def update_result(*args):
         tg_value = tg_scale.get()
         kb_value = kb_scale.get()
         tb_value = tb_scale.get()
-        M_value = M_scale.get()*10000
+        M_value = np.power(M_scale.get()*10000,0.9)
         if I_processed is not None:
             result_img = post(kr_value, tr_value, kg_value,
                               tg_value, kb_value, tb_value, M_value)
@@ -334,39 +336,47 @@ if __name__ == '__main__':
 
     kr_label = tk.Label(frame, text="Select k Value in Red channel")
     kr_label.pack()
-    kr_scale = tk.Scale(frame, from_=0, to=500, orient="horizontal",
+    kr_scale = tk.Scale(frame, from_=0, to=150, orient="horizontal",
                         resolution=slider_resolution, command=update_result, length=slider_length)
     kr_scale.pack()
 
     tr_label = tk.Label(frame, text="Select t Value in Red channel")
     tr_label.pack()
-    tr_scale = tk.Scale(frame, from_=0, to=10, orient="horizontal",
+    tr_scale = tk.Scale(frame, from_=0, to=15, orient="horizontal",
                         resolution=slider_resolution, command=update_result, length=slider_length)
     tr_scale.pack()
 
     kg_label = tk.Label(frame, text="Select k Value in Green channel")
     kg_label.pack()
-    kg_scale = tk.Scale(frame, from_=0, to=500, orient="horizontal",
+    kg_scale = tk.Scale(frame, from_=0, to=150, orient="horizontal",
                         resolution=slider_resolution, command=update_result, length=slider_length)
     kg_scale.pack()
 
     tg_label = tk.Label(frame, text="Select t Value in Red channel")
     tg_label.pack()
-    tg_scale = tk.Scale(frame, from_=0, to=10, orient="horizontal",
+    tg_scale = tk.Scale(frame, from_=0, to=15, orient="horizontal",
                         resolution=slider_resolution, command=update_result, length=slider_length)
     tg_scale.pack()
 
     kb_label = tk.Label(frame, text="Select k Value in Blue channel")
     kb_label.pack()
-    kb_scale = tk.Scale(frame, from_=0, to=500, orient="horizontal",
+    kb_scale = tk.Scale(frame, from_=0, to=150, orient="horizontal",
                         resolution=slider_resolution, command=update_result, length=slider_length)
     kb_scale.pack()
 
     tb_label = tk.Label(frame, text="Select t Value in Red channel")
     tb_label.pack()
-    tb_scale = tk.Scale(frame, from_=0, to=10, orient="horizontal",
+    tb_scale = tk.Scale(frame, from_=0, to=15, orient="horizontal",
                         resolution=slider_resolution, command=update_result, length=slider_length)
     tb_scale.pack()
+
+
+    kr_scale.set(1)
+    tr_scale.set(1)
+    kg_scale.set(1)
+    tg_scale.set(1)
+    kb_scale.set(1)
+    tb_scale.set(1)
 
     result_label = tk.Label(frame, text="Result: ")
     result_label.pack()
