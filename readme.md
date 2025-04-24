@@ -1,8 +1,8 @@
 # Novel Computational Photography for Soft-Focus Effect in Automatic Post Production
 
 ## Introduction
-This is a Python implementation of Algorithm 4 in my proposed paper, ``Novel Computational Photography for Soft-Focus Effect in Automatic Post Production``, with my pre-generated kernel estimate matrix. Additionally, the low-resolution preview feature is included.
-The program is with GUI and multi-thread programming for easy execution.
+This is a Python implementation of Algorithm 4 in my proposed paper, ``Novel Computational Photography for Soft-Focus Effect in Automatic Post Production``, with the pre-generated kernel estimate matrix. Additionally, the low-resolution preview feature is included.
+The program is with a GUI and multi-thread programming for easy execution.
 
 The code is tested under `Python 3.7.17` and ``Ubuntu 20.04`` and only currently supports three-channel images. Authentic B&W and four-channel images are not supported (only one channel).
 
@@ -27,7 +27,7 @@ Click Select File to choose the desired image to generate a soft-focus effect.
 
 Change the value of `M` to tune the major strength of the effect by dragging the bar. $(M \times 10000)^{0.9}=\chi$, where $\chi$ is defined in Eq. (32) in the paper.
 
-Then, dragging the bar, choose the desired $(k,t)$ value in each channel. The higher $t$ can get a smoother effect. The higher $k$ can have a more substantial impact.
+Then, dragging the bar, choose each channel's desired $(k,t)$ value. The higher $t$ can get a smoother effect. The higher $k$ can have a more substantial impact.
 
 After the adjustment, click `Save Result` to store the full-resolution result.
 
