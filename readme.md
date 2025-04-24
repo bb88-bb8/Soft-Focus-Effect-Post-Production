@@ -42,13 +42,15 @@ After the adjustment, click `Save Result` to store the full-resolution result.
 
 If you would like to cite this work, please use the following bib.
 ```
-@ARTICLE{TSAISOFTFOCUS,
-author={Tsai, Hao-Yu and Tsai, Morris C.-H. and Huang, Scott C.-H. and Wu, Hsiao-Chun},
-journal={IEEE Transactions on Image Processing},
-title={Novel Computational Photography for Soft-Focus Effect in Automatic Post Production},
-year={2025},
-volume={Early Access}
-}
+@ARTICLE{10975140,
+  author={Tsai, Hao-Yu and Tsai, Morris C.-H. and Huang, Scott C.-H. and Wu, Hsiao-Chun},
+  journal={IEEE Transactions on Image Processing}, 
+  title={Novel Computational Photography for Soft-Focus Effect in Automatic Post Production}, 
+  year={2025},
+  volume={Early Access},
+  number={},
+  pages={},
+  doi={10.1109/TIP.2025.3562071}}
 ```
 Moreover, if you have any questions about this project, please email to `s106021226@m106.nthu.edu.tw`.
 
