@@ -20,7 +20,7 @@ To use the program please install the required package firt.
 ``pip install -r requirement.txt``
 
 ## Instruction
-To run the program, run ``python3 main.py``, then you will see the GUI, and you can choose any RGB image you want. If there is any error right after you select the image, please ensure that the image you chose is a three-channel image, not a four-channel (some PNG images might contain a transparent channel) or one-channel (B&W image).
+To run the program, run ``python3 main.py``, then you will see the GUI, and you can choose any RGB image you want. If there is any error right after you select the image, please ensure that the image you chose is a three-channel image, not a four-channel (some PNG images might contain a transparent channel) nor one-channel (B&W image).
 
 ## Demo
 Click Select File to choose the desired image to generate a soft-focus effect.
