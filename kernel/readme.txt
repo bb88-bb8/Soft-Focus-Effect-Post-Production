@@ -1,2 +1,0 @@
-the fined kernel is without filtering, i.e., the user can choose personal \Xi parameter(described in Eq.(32))
-the filtered kernel is a pre-filtering kernel; hence, the user cannot select personal \Xi.
