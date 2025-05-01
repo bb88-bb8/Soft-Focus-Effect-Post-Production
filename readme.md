@@ -2,13 +2,13 @@
 
 ## Introduction
 This is a Python implementation of Algorithm 4 in my proposed paper, ``Novel Computational Photography for Soft-Focus Effect in Automatic Post Production``, with the pre-generated kernel estimate matrix. Additionally, the low-resolution preview feature is included.
-The program is with a GUI and multi-thread programming for easy execution.
+The program has a GUI and multi-thread programming for easy execution.
 
 The code is tested under `Python 3.7.17` and ``Ubuntu 20.04`` and only currently supports three-channel images. Authentic B&W (only one channel) and four-channel images are not supported.
 
 
 ## Install
-To use the program please install the required package firt.
+To use the program, please install the required package first.
 
 ### To install PIL
 ``sudo apt-get install python-imaging-tk``
@@ -16,7 +16,7 @@ To use the program please install the required package firt.
 ### To install tkinter
 ``sudo apt-get install python3-tk ``
 
-### To install resting package 
+### To install the resting package 
 ``pip install -r requirement.txt``
 
 ## Instruction
