@@ -47,9 +47,10 @@ If you would like to cite this work, please use the following bib.
   journal={IEEE Transactions on Image Processing}, 
   title={Novel Computational Photography for Soft-Focus Effect in Automatic Post Production}, 
   year={2025},
-  volume={Early Access},
+  volume={34},
   number={},
-  pages={},
+  pages={2560-2574},
+  keywords={Optical filters;Kernel;Lenses;Estimation;Cameras;Photography;Optical imaging;Convolution;Image restoration;Memory management;Kernel-matrix estimation;soft-focus effect;Kullback-Leibler divergence of discrete cosine transform (DCT-KLD);peak-signal-to-noise ratio (PSNR);irradiance;computational photography},
   doi={10.1109/TIP.2025.3562071}}
 ```
 Moreover, if you have any questions about this project, please email to `s106021226@m106.nthu.edu.tw`.
