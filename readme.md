@@ -1,7 +1,7 @@
 # Novel Computational Photography for Soft-Focus Effect in Automatic Post Production
 
 ## Introduction
-This is a Python implementation of Algorithm 4 in my proposed paper, ``Novel Computational Photography for Soft-Focus Effect in Automatic Post Production``, with the pre-generated kernel estimate matrix. Additionally, the low-resolution preview feature is included.
+This is a Python implementation of Algorithm 4 in my proposed paper, [Novel Computational Photography for Soft-Focus Effect in Automatic Post Production](<https://ieeexplore.ieee.org/document/10975140>), with the pre-generated kernel estimate matrix. Additionally, the low-resolution preview feature is included.
 The program has a GUI and multi-thread programming for easy execution.
 
 The code is tested under `Python 3.7.17` and ``Ubuntu 20.04`` and only currently supports three-channel images. Authentic B&W (only one channel) and four-channel images are not supported.
